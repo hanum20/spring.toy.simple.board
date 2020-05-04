@@ -2,6 +2,7 @@ package com.hanum.simple.board.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-@Getter @Setter
+@Getter @Setter @ToString
 public class Post {
 
     @Id @GeneratedValue

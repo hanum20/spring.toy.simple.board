@@ -12,6 +12,8 @@
 > psql -U hanum -d boarddata
 ```
 
+<br>
+
 ### 2. 종속성 설정
 **pom.xml**
 ```xml
@@ -34,6 +36,8 @@
 ```
 > * postgresql는 runtime시 연결
 > * h2는 test시 연결
+
+<br>
 
 ### 3. application.properties
 ```text
