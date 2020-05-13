@@ -1,6 +1,6 @@
 package com.hanum.simple.board.service;
 
-import com.hanum.simple.board.entity.Account;
+import com.hanum.simple.board.domain.Account;
 import com.hanum.simple.board.repository.AccountRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,5 +47,10 @@ public class BoardServiceImplTest {
     @Test
     public void getPostAll() {
         boardService.getPostAll().forEach(System.out::println);
+    }
+
+    @Test
+    public void getPostPage() {
+
     }
 }

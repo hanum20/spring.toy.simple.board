@@ -10,6 +10,12 @@
 # postgresql 접속
 > su - postgres
 > psql -U hanum -d boarddata
+
+# 멈춰있는 container 실행
+> docker start postgres_boot
+
+# Docker 모든 containers list 조회(멈춤 상태 포함)
+> docker ps -a 
 ```
 
 <br>

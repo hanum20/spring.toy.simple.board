@@ -1,4 +1,4 @@
-package com.hanum.simple.board.entity;
+package com.hanum.simple.board.domain;
 
 import lombok.Getter;
 import lombok.Setter;

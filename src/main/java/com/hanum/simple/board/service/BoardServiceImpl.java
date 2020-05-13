@@ -1,9 +1,11 @@
 package com.hanum.simple.board.service;
 
-import com.hanum.simple.board.entity.Account;
-import com.hanum.simple.board.entity.Post;
+import com.hanum.simple.board.domain.Account;
+import com.hanum.simple.board.domain.Post;
 import com.hanum.simple.board.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,5 +32,10 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public List<Post> getPostAll() {
         return postRepository.findAll();
+    }
+
+    @Override
+    public Page<Post> getPostPage(Pageable pageable) {
+        return postRepository.findAll(pageable);
     }
 }

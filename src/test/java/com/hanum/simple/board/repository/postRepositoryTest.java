@@ -1,7 +1,7 @@
 package com.hanum.simple.board.repository;
 
-import com.hanum.simple.board.entity.Account;
-import com.hanum.simple.board.entity.Post;
+import com.hanum.simple.board.domain.Account;
+import com.hanum.simple.board.domain.Post;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,4 +38,6 @@ public class postRepositoryTest {
 
         entityManager.flush();
     }
+
+
 }
