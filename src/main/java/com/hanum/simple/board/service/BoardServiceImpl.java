@@ -1,6 +1,5 @@
 package com.hanum.simple.board.service;
 
-import com.hanum.simple.board.domain.Account;
 import com.hanum.simple.board.domain.Post;
 import com.hanum.simple.board.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +21,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public void setNewPost(String title, Account account) {
-        Post post = new Post();
-        post.setTitle(title);
-        post.setAccount(account);
+    public void createPost(Post post) {
         postRepository.save(post);
     }
 
