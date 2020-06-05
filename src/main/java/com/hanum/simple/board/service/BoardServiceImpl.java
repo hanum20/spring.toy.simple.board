@@ -26,6 +26,11 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public void updatePost(Post post) {
+        postRepository.save(post);
+    }
+
+    @Override
     public List<Post> getPostAll() {
         return postRepository.findAll();
     }

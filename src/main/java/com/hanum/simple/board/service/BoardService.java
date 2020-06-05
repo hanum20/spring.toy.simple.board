@@ -9,6 +9,7 @@ import java.util.List;
 public interface BoardService {
     public Post getPostById(Long id);
     public void createPost(Post post);
+    public void updatePost(Post post);
     public List<Post> getPostAll();
     public Page<Post> getPostPage(Pageable pageable);
 }

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>post</title>
+</head>
+<body>
+<a th:href="@{/posts/form}">Create New Event</a>
+</body>
+<div th:unless="${#lists.isEmpty(list)}">
+    <ul th:each="post: ${list}">
+        title: <a th:href="@{'/posts/' + ${post.id}}" th:text="${post.title}">title</a>
+    </ul>
+</div>
+</html>

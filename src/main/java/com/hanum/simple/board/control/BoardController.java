@@ -7,20 +7,25 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class BoardController {
 
     @Autowired
     BoardService boardService;
 
     @GetMapping("/posts")
-    public Page<Post> getPost(@PageableDefault(size= 10, sort="title", direction= Sort.Direction.DESC) Pageable pageable) {
-        return boardService.getPostPage(pageable);
+    public String getPost(@PageableDefault(size= 10, sort="title", direction= Sort.Direction.DESC) Pageable pageable,
+                              Model model) {
+        Page<Post> page = boardService.getPostPage(pageable);
+
+        model.addAttribute("list", page.getContent());
+        return "board/list";
     }
 
     @GetMapping("/posts/{id}")
@@ -28,11 +33,12 @@ public class BoardController {
         // page가 없을 경우 exception
         Post post = boardService.getPostById(id);
         model.addAttribute(post);
-        return "/board/post";
+        return "board/post";
     }
 
     @GetMapping("/posts/form")
-    public String postForm(){
+    public String postForm(Model model){
+        model.addAttribute("post", new Post());
         return "/board/form";
     }
 

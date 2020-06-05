@@ -41,7 +41,7 @@ public class BoardServiceImplTest {
         Account savedAccount = accountRepository.save(account);
 
         // new post status is persistent
-        boardService.setNewPost("test0000",savedAccount);
+        //boardService.createPost("test0000",savedAccount);
     }
 
     @Test
