@@ -39,14 +39,14 @@ public class BoardController {
     @GetMapping("/posts/form")
     public String postForm(Model model){
         model.addAttribute("post", new Post());
-        return "/board/form";
+        return "board/form";
     }
 
     @PostMapping("/posts")
     public String createPost(@Validated @ModelAttribute Post post,
                              BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
-            return "/board/form";
+            return "board/form";
         }
 
         boardService.createPost(post);
