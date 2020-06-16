@@ -30,6 +30,16 @@ public class AccountServiceImplTest {
 
     @Test
     public void getAccountById() {
+        Account account = new Account();
+        account.setUsername("hanum");
+        account.setPassword("1234");
+
+        Account savedAccount = accountRepository.save(account);
+
+        System.out.println(savedAccount.toString());
+
+        Account getAccount = accountRepository.findById(savedAccount.getId()).get();
+        System.out.println(getAccount.toString());
     }
 
     @Test
