@@ -24,6 +24,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public boolean existAccount(Account account) throws Exception {
-        return repository.countByAccount(account) > 0 ? true : false ;
+        return repository.countById(account) > 0 ? true : false ;
     }
 }

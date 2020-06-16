@@ -4,5 +4,5 @@ import com.hanum.simple.board.domain.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
-    public Long countByAccount (Account account);
+    public Long countById (Account account);
 }
